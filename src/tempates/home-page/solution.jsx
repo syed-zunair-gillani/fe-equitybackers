@@ -1,3 +1,4 @@
+import Button from '@/components/button'
 import Label from '@/components/label'
 import SolutionCard from '@/components/solution-card'
 import React from 'react'
@@ -15,10 +16,16 @@ const Solution = () => {
                 </div>
                 <div className='mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
                     {
-                        [1,2,3,4,5].map((item, idx) => (
-                            <SolutionCard key={idx}/>
+                        [1, 2, 3, 4, 5].map((item, idx) => (
+                            <SolutionCard key={idx} />
                         ))
                     }
+                    <div className='bg-[#B3CEE8] rounded-2xl flex flex-col justify-center gap-5 items-center'>
+                        <h1 className='text-2xl md:text-4xl font-semibold'>Ready for <br/>Financing?</h1>
+                        <div>
+                            <Button fill>Get Started</Button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
