@@ -15,7 +15,7 @@ const Solution = () => {
                 </div>
                 <div className='mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
                     {
-                        [1,2,3,4].map((item, idx) => (
+                        [1,2,3,4,5].map((item, idx) => (
                             <SolutionCard key={idx}/>
                         ))
                     }
