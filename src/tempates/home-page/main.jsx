@@ -16,7 +16,7 @@ const Main = () => {
                     </div>
                     <div className='flex flex-col md:flex-row gap-4'>
                         <div className='md:max-w-[190px]'>
-                            <Button fill>Get Started</Button>
+                            <Button link="#" fill>Get Started</Button>
                         </div>
                         <div className='md:max-w-[190px]'>
                             <Button>Broker Program</Button>

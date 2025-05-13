@@ -43,7 +43,7 @@ export default Header
 const menuItems = [
   {
     label: 'Products',
-    link: '#',
+    link: '/products',
     submenu: [
       {
         label: 'Ground Up',
