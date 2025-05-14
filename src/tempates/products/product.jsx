@@ -2,8 +2,8 @@ import React from 'react'
 
 function ProductTemplate() {
   return (
-    <section className='py-16 md:py-20'>
-      <div className='container mx-auto px-4'>
+    <section className=' md:pt-20'>
+      <div className='container mx-auto px-4 py-16'>
         <h1 className='text-center text-3xl md:text-5xl font-semibold leading-snug'>
           Innovative Solutions for Real Estate Investors
         </h1>

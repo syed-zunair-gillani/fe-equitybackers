@@ -6,7 +6,11 @@ export default function Home() {
     <>
       <section className="bg-[#f5f2ec] bg-cover h-auto ">
         <ProductTemplate/>
-         <Productcard/>
+           <div>
+            {[...Array(5)].map((_, index) => (
+                <Productcard key={index} />
+            ))}
+        </div>
 
       </section>
     </>

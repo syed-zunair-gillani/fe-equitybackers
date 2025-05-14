@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Button from '@/components/button'
 
 function ProductCard() {
     return (
@@ -45,13 +46,10 @@ function ProductCard() {
                         </div>
                     </div>
 
-                    <div className='grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-4 mt-10'>
-                        <div className='text-center bg-[#80e5f4] py-[13px] rounded-[8px]'>
-                         <Link href="/" className='text-[#121212] font-[600] text-[16px] hover:underline'> Get Started</Link>
-                    </div>
-                    <div className='text-center border-[#80e5f4] border-2 py-[13px] rounded-[8px]'>
-                        <Link href="/" className='text-blue-300 hover:underline font-[600] text-[16px]'>Learn More</Link>
-                    </div>
+                    <div className='grid md:grid-cols-2 grid-cols-1 gap-4 mt-10'>     
+                    <Button link="#" fill>Get Started</Button>
+                    <Button link="#">Learn More</Button>
+                    
                     </div>
 
                 </div>
