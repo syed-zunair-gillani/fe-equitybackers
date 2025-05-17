@@ -69,7 +69,7 @@ const menuItems = [
   },
   {
     label: 'About',
-    link: '#',
+    link: '/about',
   },
   {
     label: 'Brokers',

@@ -50,7 +50,7 @@ function Faq() {
           <div key={index}>
             <h3
               onClick={() => handleToggle(index)}
-              className="text-[18px] font-semibold cursor-pointer text-[#00407D] flex justify-between items-center  border border-gray-300 rounded-lg p-4"
+              className="text-[18px]  cursor-pointer text-[#1f2124] flex justify-between items-center  border border-gray-300 rounded-lg p-4"
             >
               {faq.question}
               <span className="text-xl">{openIndex === index ? '-' : '+'}</span>
@@ -64,8 +64,8 @@ function Faq() {
           </div>
         ))}
       </div>
-       <div className="w-full  sm:w-[10%] pt-10">
-            <Button link="#">Get Started</Button>
+       <div className="w-full  sm:w-[10%] pt-10 ">
+            <Button link="#"  >See All FAQs</Button>
           </div>
     </section>
   )
