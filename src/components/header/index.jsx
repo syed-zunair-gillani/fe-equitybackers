@@ -73,11 +73,11 @@ const menuItems = [
   },
   {
     label: 'Brokers',
-    link: '#',
+    link: '/brokers',
   },
   {
     label: 'Resources',
-    link: '#',
+    link: '/resources',
   },
   {
     label: 'Contact',
