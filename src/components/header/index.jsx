@@ -47,23 +47,23 @@ const menuItems = [
     submenu: [
       {
         label: 'Ground Up',
-        link: '#',
+        link: '/products/ground-up',
       },
       {
         label: 'Fix & Flip',
-        link: '#',
+        link: '/products/fix-and-flip',
       },
       {
         label: 'DSCR Rental',
-        link: '#',
+        link: '/products/dscr-rental',
       },
       {
         label: 'Rental Portfolio',
-        link: '#',
+        link: '/products/rental-portfolio',
       },
       {
         label: 'Bridge Loan',
-        link: '#',
+        link: '/products/bridge-loan',
       },
     ]
   },
@@ -78,9 +78,27 @@ const menuItems = [
   {
     label: 'Resources',
     link: '/resources',
+    submenu: [
+      {
+        label: 'Blogs',
+        link: '/blogs',
+      },
+      {
+        label: 'Faqs',
+        link: '/faqs',
+      },
+      {
+        label: 'Lending Locations',
+        link: '/lending-locations',
+      },
+      {
+        label: 'Construction Draw',
+        link: '/construction-draw',
+      }
+    ]
   },
   {
     label: 'Contact',
-    link: '#',
+    link: '/contact',
   },
 ]
