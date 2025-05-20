@@ -43,20 +43,20 @@ export default function Home() {
                     },
                 ]}
             />
-            
-             <div className="bg-[#b3cee8] !py-0">
-                 <Mission
-               backgroundColor="#b3cee8"
-                label="CONSTRUCTION DRAW"
-                title="Support and Loan Management"
-                text="Our dedicated construction loan support team is here to assist you every step of the way. Access essential resources, get expert guidance, and manage your loan with ease—all in one place."
-                img="/images/construction-loan-1.jpg"
-                buttonText="View Construction Loan Resources"
-                buttonLink="/"
-                reverse={false}
-            />
-             </div>
-             <Proven/>
+
+            <div className="bg-[#b3cee8] !py-0">
+                <Mission
+                    backgroundColor="#b3cee8"
+                    label="CONSTRUCTION DRAW"
+                    title="Support and Loan Management"
+                    text="Our dedicated construction loan support team is here to assist you every step of the way. Access essential resources, get expert guidance, and manage your loan with ease—all in one place."
+                    img="/images/construction-loan-1.jpg"
+                    buttonText="View Construction Loan Resources"
+                    buttonLink="/"
+                    reverse={false}
+                />
+            </div>
+            <Proven />
 
         </>
     );
