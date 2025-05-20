@@ -43,7 +43,7 @@ export default Header
 const menuItems = [
   {
     label: 'Products',
-    link: '#',
+    link: '/products',
     submenu: [
       {
         label: 'Ground Up',
@@ -69,15 +69,15 @@ const menuItems = [
   },
   {
     label: 'About',
-    link: '#',
+    link: '/about',
   },
   {
     label: 'Brokers',
-    link: '#',
+    link: '/brokers',
   },
   {
     label: 'Resources',
-    link: '#',
+    link: '/resources',
   },
   {
     label: 'Contact',
