@@ -81,11 +81,11 @@ const menuItems = [
     submenu: [
       {
         label: 'Blogs',
-        link: '/blogs',
+        link: '/blog',
       },
       {
         label: 'Faqs',
-        link: '/faqs',
+        link: '/faq',
       },
       {
         label: 'Lending Locations',
