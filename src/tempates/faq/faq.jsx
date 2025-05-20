@@ -104,12 +104,12 @@ function Faq() {
             <div className="container mx-auto px-4 py-10">
                 <div className="flex flex-col md:flex-row gap-8">
                     {/* Sidebar */}
-                    <div className="w-full md:w-1/4 space-y-2">
+                    <div className="w-full md:w-1/4 space-y-3">
                         {Object.keys(faqData).map((category) => (
                             <a
                                 key={category}
                                 href={`#${category.replace(/\s+/g, '-')}`}
-                                className="block text-blue-600 hover:underline font-[700]"
+                                className="block text-primary hover:underline font-[700]"
                             >
                                 {category}
                             </a>
