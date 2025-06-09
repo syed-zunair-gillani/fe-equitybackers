@@ -7,15 +7,15 @@ import Testimonials from './testimonials'
 import Faq from '../fix-flip/faq'
 import Lending from './lending'
 
-const HomePageTemplate = () => {
+const HomePageTemplate = ({data, testimonials, faqs}) => {
   return (
     <>
-      <Main />
-      <Founders />
-      <Solution />
-      <Archwest />
-      <Testimonials />
-      <Faq />
+      <Main data={data.Hero} />
+      <Founders data={data?.Founder} />
+      <Solution data={data?.LandingSolution}/>
+      <Archwest data={data?.Why}/>
+      <Testimonials data={testimonials} />
+      <Faq data={faqs}/>
       <Lending
         heading="Tailored Lending for Every Need"
         backgroundColor="#0A2540"
