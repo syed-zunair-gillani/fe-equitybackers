@@ -1,55 +1,44 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import Button from '@/components/button'
+import { getCompleteURL } from '@/utils'
 
-function ProductCard() {
+function ProductCard({ data }) {
     return (
         <div className='container mx-auto px-4 py-8'>
             <div className='grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-[14px] shadow-lg'>
                 {/* Left side */}
                 <div className='bg-[#001b36] p-8 text-white'>
                     <h2 className='text-[32px] md:text-[40px] font-semibold'>Ground Up</h2>
-
                     {/* Detail Row */}
-                    <div className='pt-8 pb-3 flex justify-between'>
-                        <h3 className='text-[16px] font-semibold'>Term</h3>
-                        <p className='text-[16px] font-normal'>12 to 24 Months + Extension</p>
-                    </div>
-                    <hr className='border-white/30' />
-
-                    <div className='pt-4 pb-4 flex justify-between'>
-                        <h3 className='text-[16px] font-semibold'>Loan Amount</h3>
-                        <p className='text-[16px] font-normal'>$250K to $5M+</p>
-                    </div>
-                    <hr className='border-white/30' />
-
-                    <div className='pt-4 pb-4 flex justify-between'>
-                        <h3 className='text-[16px] font-semibold'>LTC</h3>
-                        <p className='text-[16px] font-normal'>Up to 90%</p>
-                    </div>
-                    <hr className='border-white/30' />
-
-                    <div className='pt-4 pb-4 flex justify-between'>
-                        <h3 className='text-[16px] font-semibold'>LTARV</h3>
-                        <p className='text-[16px] font-normal'>Up to 70%</p>
-                    </div>
-                    <hr className='border-white/30' />
+                    {
+                        data?.Lists?.map((item, idx) => (
+                            <>
+                                <div className='pt-3 pb-3 flex justify-between' key={idx}>
+                                    <h3 className='text-[16px] font-semibold'>{item?.Title}</h3>
+                                    <p className='text-[16px] font-normal'>{item?.Info}</p>
+                                </div>
+                                <hr className='border-white/30' />
+                            </>
+                        ))
+                    }
 
                     <div className='pt-4 pb-4 flex justify-between'>
                         <h3 className='text-[16px] font-semibold'>Property Types</h3>
                         <div>
-                            <p className='text-[16px] font-normal'>Non-Owner Occupied</p>
-                            <p className='text-[16px] font-normal'>Single Family (1–4 Units)</p>
-                            <p className='text-[16px] font-normal'>Multifamily (5–9 Units)</p>
-                            <p className='text-[16px] font-normal'>No Mixed Use</p>
+                            {
+                                data?.Property_type?.map((item, idx) => (
+                                    <>
+                                        <p className='text-[16px] font-normal' key={idx}>{item?.Items}</p>
+                                    </>
+                                ))
+                            }
                         </div>
                     </div>
 
-                    <div className='grid md:grid-cols-2 grid-cols-1 gap-4 mt-10'>     
-                    <Button link="#" fill>Get Started</Button>
-                    <Button link="#">Learn More</Button>
-                    
+                    <div className='grid md:grid-cols-2 grid-cols-1 gap-4 mt-10'>
+                        <Button link="#" fill>Get Started</Button>
+                        <Button link={`/products/${data?.Slug}`}>Learn More</Button>
                     </div>
 
                 </div>
@@ -57,7 +46,7 @@ function ProductCard() {
                 {/* Right side */}
                 <div className='h-full'>
                     <Image
-                        src="/images/ground-up-product.jpg"
+                        src={getCompleteURL(data?.Image?.url)}
                         width={600}
                         height={600}
                         alt="Ground Up Product"

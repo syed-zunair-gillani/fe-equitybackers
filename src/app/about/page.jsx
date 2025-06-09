@@ -34,7 +34,7 @@ export default async function About() {
             <Values data={Our_value} />
             <Process data={our_process} />
             <Team data={our_team}/>
-            <Proven data={Resources}/>
+            <Proven />
         </>
     );
 }

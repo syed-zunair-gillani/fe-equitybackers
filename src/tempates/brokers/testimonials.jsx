@@ -1,37 +1,15 @@
 import Label from '@/components/label';
+import { getCompleteURL } from '@/utils';
 import React from 'react';
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
-function Testimonials() {
-    const testimonials = [
-        {
-            image: "/images/mission.jpg",
-            message:
-                "I’ve had the pleasure of working with Archwest on several transactions. Their knowledge, unrivaled responsiveness and dedication to both brokers and their clients ensures a smooth and efficient lending process.   Their professionalism and reliability truly set them apart. Archwest offers very competitive pricing and terms, making them my top recommendation for private lending. They consistently exceed expectations!",
-            name: "Dawna T",
-            company: "Broker"
-        },
-        {
-            image: "/images/mission.jpg",
-            message:
-                "Their support and responsiveness are unmatched. I’ve closed more deals since partnering with them.",
-            name: "James Carter",
-            company: "Carter Lending Solutions"
-        },
-        {
-            image: "/images/mission.jpg",
-            message:
-                "I appreciate how they treat brokers as true partners. It’s made a huge difference in my business.",
-            name: "Linda Nguyen",
-            company: "Nguyen Brokerage Services"
-        }
-    ];
-
+function Testimonials({data}) {
     return (
         <section className="bg-[#B3CEE8] py-18">
             <div className="container mx-auto px-4 py-10">
                 <div className="flex flex-col md:flex-row gap-4 md:items-center mb-10">
                     <div className="w-full md:min-w-[250px]">
-                        <Label>PRODUCTS</Label>
+                        <Label>TESTIMONIALS</Label>
                         <h1 className="text-[30px] md:text-[40px] font-semibold leading-tight py-4">
                             Broker Success Stories
                         </h1>
@@ -42,24 +20,25 @@ function Testimonials() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {testimonials.map((testimonial, index) => (
+                    {data?.slice(0,3)?.map((testimonial, index) => (
                         <div
                             key={index}
                             className="bg-white p-6 rounded-xl shadow-md h-full flex flex-col justify-between"
                         >
 
-                            <p className="text-gray-700 mb-4">"{testimonial.message}"</p>
+                            <div className="text-gray-700 mb-7"><BlocksRenderer content={testimonial?.Review} /></div>
+
                             <div className=" flex gap-4">
                                 <div>
                                     <img
-                                        src={testimonial.image}
+                                        src={getCompleteURL(testimonial?.Image.url)}
                                         alt={testimonial.name}
                                         className="w-14 h-14 rounded-full object-cover mb-4 mx-auto"
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-lg ">{testimonial.name}</h4>
-                                    <p className="text-sm text-gray-500">{testimonial.company}</p>
+                                    <h4 className="font-semibold text-lg ">{testimonial.Author}</h4>
+                                    <p className="text-sm text-gray-500">{testimonial.Designation}</p>
                                 </div>
                             </div>
                         </div>

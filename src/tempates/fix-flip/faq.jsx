@@ -5,7 +5,6 @@ import React, { useState } from 'react'
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 function Faq({ data }) {
-  console.log("🚀 ~ Faq ~ data:", data)
   const [openIndex, setOpenIndex] = useState(null)
 
   const handleToggle = (index) => {

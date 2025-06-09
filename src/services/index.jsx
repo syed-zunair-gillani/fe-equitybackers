@@ -60,9 +60,21 @@ export async function getAboutPage() {
 export async function getBrokerPage() {
   const params = qs.stringify({
     populate: [
-      "Hero.Button", "Why.List"
+      "Hero.Button", "Why.List", "Why.List.Icon"
     ],
   })
   const response = await Request(`/brokers-page?${params}`);
+  return response.data
+}
+
+
+export async function getProducts() {
+  const params = qs.stringify({
+    populate: [
+      "Banner_Image", "Image", "Property_type", "Lists", "highlight", "Process", "Resources.Image",
+      "Resources.Buttons"
+    ],
+  })
+  const response = await Request(`/products?${params}`);
   return response.data
 }
