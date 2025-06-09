@@ -1,36 +1,40 @@
 import PageNav from "@/components/page-nav";
 import Proven from "@/components/proven";
+import { getAboutPage } from "@/services";
 import Main from "@/tempates/about/main";
 import Mission from "@/tempates/about/mission";
 import Team from "@/tempates/about/team";
 import Values from "@/tempates/about/values";
 import Process from "@/tempates/fix-flip/process";
 import Founders from "@/tempates/home-page/founders";
+import { getCompleteURL } from "@/utils";
 
+export default async function About() {
+    const [
+        aboutPage
+    ] = await Promise.all([
+        getAboutPage(),
+    ]);
 
+    const {Banner, Our_Mission,Founder, Our_value, our_process, our_team, Resources } = aboutPage
 
-export default function Home() {
     return (
         <>
-            <Main />
+            <Main data={Banner}/>
             <PageNav links={pageNavLinks} />
             <Mission
-                label="OUR MISSION"
-                title="Close More Loans, Open More Doors"
-                text="Our mission is to empower investors to secure more loans and create greater opportunities—not just for themselves, but for a market in need of quality housing. In today’s changing landscape, investors need a trusted lending partner that offers innovative products along with speed and certainty of execution. As one of the fastest-growing companies in private lending, Archwest is committed to supporting borrowers and broker partners in achieving this shared vision."
-                img="/images/mission.jpg"
-               
+                label={Our_Mission?.Label}
+                title={Our_Mission?.Title}
+                text={Our_Mission?.Info}
+                img={getCompleteURL(Our_Mission?.Image?.url)}
             />
             <div className='bg-[#f5f2ec]'>
-                <Founders />
+                <Founders data={Founder[0]} />
             </div>
-            <Values />
-            <Process />
-            <Team />
-            <Proven/>
-
-
-
+            <Values data={Our_value} />
+            <Process data={our_process} />
+            <Team data={our_team}/>
+            <Proven data={Resources}/>
         </>
     );
 }
