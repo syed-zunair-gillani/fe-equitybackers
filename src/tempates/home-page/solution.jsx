@@ -18,8 +18,6 @@ const Solution = ({data}) => {
                     {
                         data?.products?.map((item, idx) => (
                             <SolutionCard key={idx} data={item}/>
-                        [1, 2, 3, 4, 5].map((item, idx) => (
-                            <SolutionCard key={idx} />
                         ))
                     }
                     <div className='bg-[#B3CEE8] rounded-2xl flex flex-col justify-center gap-5 items-center'>

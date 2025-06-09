@@ -3,7 +3,6 @@ import React from 'react'
 import Button from './button';
 
 function Proven({data}) {
-    console.log("🚀 ~ Proven ~ data:", data)
     return (
         <section className="relative bg-cover bg-center bg-no-repeat bg-[url('/images/about-hero-img.jpg')]">
             <div className="absolute inset-0 bg-[#001B36] opacity-90"></div>

@@ -1,4 +1,5 @@
 import PageNav from '@/components/page-nav';
+import { getBrokerPage } from '@/services';
 import Contact from '@/tempates/brokers/contact';
 import Main from '@/tempates/brokers/main'
 import Products from '@/tempates/brokers/products';
@@ -8,7 +9,14 @@ import Archwest from '@/tempates/home-page/archwest';
 import ProductCard from '@/tempates/products/productcard';
 
 
-export default function Home() {
+export default async function Home() {
+    const [
+        brokerPage
+    ] = await Promise.all([
+        getBrokerPage(),
+    ]);
+    console.log("🚀 ~ Home ~ brokerPage:", brokerPage)
+
     return (
         <>
             <Main />
@@ -40,10 +48,8 @@ export default function Home() {
             <PageNav links={pageNavLinks} />
             <ProductCard />
             <Contact />
-            <Testimonials/>
+            <Testimonials />
             <Faq />
-
-
         </>
     );
 }
