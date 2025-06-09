@@ -24,7 +24,6 @@ function Mission({ label = 'OUR MISSION', title, text, img, reverse = false, but
                     <Label>{label}</Label>
                     <h2 className='sm:text-[40px] text-[28px] font-[600] py-3 '>{title}</h2>
                     <p className='text-[20px] font-[400] mb-6'>{text}</p>
-
                     {/* Button (only if props provided) */}
                     {buttonText && buttonLink && (
                         <div className='!w-full min-w-[190px]  mt-14'>

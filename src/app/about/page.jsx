@@ -1,4 +1,3 @@
-import PageNav from "@/components/page-nav";
 import Proven from "@/components/proven";
 import { getAboutPage } from "@/services";
 import Main from "@/tempates/about/main";
@@ -8,6 +7,7 @@ import Values from "@/tempates/about/values";
 import Process from "@/tempates/fix-flip/process";
 import Founders from "@/tempates/home-page/founders";
 import { getCompleteURL } from "@/utils";
+import AboutNav from "./about-nav";
 
 export default async function About() {
     const [
@@ -21,7 +21,7 @@ export default async function About() {
     return (
         <>
             <Main data={Banner}/>
-            <PageNav links={pageNavLinks} />
+            <AboutNav links={pageNavLinks} />
             <Mission
                 label={Our_Mission?.Label}
                 title={Our_Mission?.Title}
@@ -42,16 +42,16 @@ export default async function About() {
 
 const pageNavLinks = [
     {
-        label: 'About',
-        link: '/about'
+        Title: 'About',
+        Slug: 'about'
     },
     {
-        label: 'Team',
-        link: '/team'
+        Title: 'Team',
+        Slug: 'team'
     },
     {
-        label: 'Careers',
-        link: '/careers'
+        Title: 'Careers',
+        Slug: 'careers'
     }
 ]
 

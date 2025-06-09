@@ -78,3 +78,19 @@ export async function getProducts() {
   const response = await Request(`/products?${params}`);
   return response.data
 }
+
+export async function getSingleProducts(slug) {
+  const params = qs.stringify({
+    populate: [
+      "Banner_Image", "Image", "Property_type", "Lists", "highlight.Icon", "Process", "Resources.Image",
+      "Resources.Buttons"
+    ],
+    filters: {
+      Slug: {
+        $eq: slug
+      }
+    }
+  })
+  const response = await Request(`/products?${params}`);
+  return response.data
+}
