@@ -42,6 +42,18 @@ export async function getFaqsGeneral() {
 }
 
 
+export async function getBlogs() {
+  const params = qs.stringify({
+    populate: [
+      "Image"
+    ],
+  });
+
+  const response = await Request(`/blogs?${params}`);
+  return response.data;
+}
+
+
 
 export async function getAboutPage() {
   const params = qs.stringify({
@@ -93,4 +105,11 @@ export async function getSingleProducts(slug) {
   })
   const response = await Request(`/products?${params}`);
   return response.data
+}
+
+
+export async function getFaqs() {
+  const params = qs.stringify({});
+  const response = await Request(`/faqs?${params}`);
+  return response.data;
 }

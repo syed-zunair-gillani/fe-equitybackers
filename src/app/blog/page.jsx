@@ -4,19 +4,23 @@ import PageNav from "@/components/page-nav";
 import Blog from "@/tempates/blog/blog";
 import Card from "@/tempates/blog/card";
 import Proven from "@/components/proven";
+import { getBlogs } from "@/services";
 
 
+export default async function Home() {
+    const [
+        blogs
+    ] = await Promise.all([
+        getBlogs()
+    ]);
 
-export default function Home() {
     return (
         <>
             <Main />
             <Blog />
-            <PageNav links={pageNavLinks} />
-            <Card />
+            {/* <PageNav links={pageNavLinks} /> */}
+            <Card data={blogs} />
             <Proven />
-
-
         </>
     );
 }

@@ -7,6 +7,10 @@
   --dark: #171717;
 }
 
+body, html{
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
